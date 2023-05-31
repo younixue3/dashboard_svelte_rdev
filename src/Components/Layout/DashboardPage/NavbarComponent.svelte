@@ -1,7 +1,8 @@
 <script>
-	import Icon from '$lib/assets/favicon.png';
-	import Fa from 'svelte-fa/src/fa.svelte';
-	import { faHome, faFileAlt, faCogs, faTh, faThLarge } from '@fortawesome/free-solid-svg-icons';
+	// import Icon from '$lib/assets/favicon.png';
+	// import Fa from 'svelte-fa/src/fa.svelte';
+	// import { faHome, faFileAlt, faCogs, faTh, faThLarge } from '@fortawesome/free-solid-svg-icons';
+	import NavbarItemComponent from './NavbarItemComponent.svelte';
 </script>
 
 <div class="bg-white p-8 rounded-3xl w-80 m-5 space-y-10">
@@ -30,7 +31,8 @@
 		<h1 class="text-gray-500 text-sm">RDeveloper .Inc</h1>
 	</div>
 	<div class="grid grid-cols-1 space-y-2">
-		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">
+		<NavbarItemComponent icon={'faHome'} />
+		<!-- <a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">
 			<Fa icon={faHome} class="w-10 inline" />Dashboard
 		</a>
 		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">
@@ -44,6 +46,6 @@
 		</a>
 		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">
 			<Fa icon={faHome} class="w-10 inline" />Dashboard
-		</a>
+		</a> -->
 	</div>
 </div>
