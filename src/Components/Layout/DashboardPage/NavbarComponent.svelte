@@ -3,6 +3,7 @@
 	// import Fa from 'svelte-fa/src/fa.svelte';
 	// import { faHome, faFileAlt, faCogs, faTh, faThLarge } from '@fortawesome/free-solid-svg-icons';
 	import NavbarItemComponent from './NavbarItemComponent.svelte';
+	import NavbarDropdownComponent from "./NavbarDropdownComponent.svelte";
 </script>
 
 <div class="bg-white p-8 rounded-3xl w-80 m-5 space-y-10">
@@ -30,22 +31,35 @@
 		>
 		<h1 class="text-gray-500 text-sm">RDeveloper .Inc</h1>
 	</div>
-	<div class="grid grid-cols-1 space-y-2">
-		<NavbarItemComponent icon={'faHome'} />
-		<!-- <a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">
-			<Fa icon={faHome} class="w-10 inline" />Dashboard
-		</a>
-		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">
-			<Fa icon={faThLarge} class="w-10 inline" />Widgets
-		</a>
-		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">
-			<Fa icon={faFileAlt} class="w-10 inline" />Form
-		</a>
-		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">
-			<Fa icon={faCogs} class="w-10 inline" />Layout Settings
-		</a>
-		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">
-			<Fa icon={faHome} class="w-10 inline" />Dashboard
-		</a> -->
+	<div class="space-y-2 w-full text-left">
+		<NavbarItemComponent icon='faHome' title='Dashboard' to='/dashboard'/>
+		<NavbarItemComponent icon='faCube' title='Widgets' to='/widgets'/>
+		<NavbarDropdownComponent icon='faLayerGroup' nest="layout" title='Layout'>
+			<div class="p-3 space-y-2">
+				<NavbarItemComponent icon='faLayerGroup' title='Type 1' to='/layout/index1'/>
+				<NavbarItemComponent icon='faLayerGroup' title='Type 2' to='/layout/index2'/>
+			</div>
+		</NavbarDropdownComponent>
+		<NavbarDropdownComponent icon='faPuzzlePiece' nest="component" title='Component'>
+			<div class="p-3 space-y-2">
+				<NavbarItemComponent icon='faLayerGroup' title='Type 1' to='/component/component1'/>
+				<NavbarItemComponent icon='faLayerGroup' title='Type 2' to='/component/component2'/>
+			</div>
+		</NavbarDropdownComponent>
+<!--		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">-->
+<!--			<Fa icon={faHome} class="w-10 inline" />Dashboard-->
+<!--		</a>-->
+<!--		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">-->
+<!--			<Fa icon={faThLarge} class="w-10 inline" />Widgets-->
+<!--		</a>-->
+<!--		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">-->
+<!--			<Fa icon={faFileAlt} class="w-10 inline" />Form-->
+<!--		</a>-->
+<!--		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">-->
+<!--			<Fa icon={faCogs} class="w-10 inline" />Layout Settings-->
+<!--		</a>-->
+<!--		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href="">-->
+<!--			<Fa icon={faHome} class="w-10 inline" />Dashboard-->
+<!--		</a>-->
 	</div>
 </div>
