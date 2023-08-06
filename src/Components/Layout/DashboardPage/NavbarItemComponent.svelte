@@ -19,6 +19,8 @@
 
 <div>
 	<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" class:text-orange-600={toggle} href={to}>
-		<Fa icon={icons[icon]} class="w-10 inline" />{title}
+		<div class="w-full">
+			<Fa icon={icons[icon]} class="w-10 inline" />{title}
+		</div>
 	</a>
 </div>

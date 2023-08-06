@@ -21,14 +21,19 @@
 	$: pathcheck($page.url.pathname)
 
 </script>
+
 <div>
-	<button class="text-gray-600 hover:text-orange-600 font-semibold py-1" class:text-orange-600={toggle} on:click={ToogleDropdown}>
+	<button class="text-gray-600 hover:text-orange-600 font-semibold flex justify-between w-full" class:text-orange-600={toggle} on:click={ToogleDropdown}>
 		<div class="">
 			<Fa icon={icons[icon]} class="w-10 inline" />{title}
 		</div>
-
+		<div>
+			<Fa icon={icons[toggle ? 'faMinus' : 'faPlus']} class="w-10 text-xs inline" />
+		</div>
 	</button>
-	<div class="bg-gray-200 rounded-xl w-full transition-all ease-in-out overflow-hidden" class:h-20={toggle} class:h-0={!toggle}>
-		<slot></slot>
+	<div class="bg-gray-500 bg-opacity-20 rounded-xl w-full transition-all ease-in-out duration-500 overflow-hidden mt-1" class:max-h-[40rem]={toggle} class:max-h-0={!toggle}>
+		<div class="p-2 space-y-2">
+			<slot></slot>
+		</div>
 	</div>
 </div>

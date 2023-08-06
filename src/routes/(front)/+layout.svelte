@@ -1,5 +1,5 @@
 <script>
-	import NavbarComponent from '../../Components/Layout/DashboardPage/NavbarComponent.svelte';
+	import NavbarComponent from '../../Components/Layout/DashboardPage/default/NavbarComponent.svelte';
 	import SidebarComponent from '../../Components/Layout/DashboardPage/SidebarComponent.svelte';
 </script>
 
