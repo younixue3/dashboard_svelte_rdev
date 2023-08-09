@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
     import Fa from 'svelte-fa/src/fa.svelte';
-    import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
+    import {faChevronRight, faHome} from '@fortawesome/free-solid-svg-icons';
     import {page} from "$app/stores";
 
     $: bread_crumbs = $page.url.pathname.replace('/', '').split('/')
@@ -15,17 +15,18 @@
     }
 </script>
 
-<div class="flex space-x-3">
-    <a href="/dashboard">
-        dashboard
+
+<div class="flex space-x-3 rounded-xl p-2">
+    <a class="px-1 hover:bg-gray-300 rounded-lg transition ease-in-out" href="/dashboard">
+        <Fa icon={faHome} class="inline" />
     </a>
-    {#if $page.url.pathname != '/dashboard'}
+    {#if $page.url.pathname !== '/dashboard'}
         {#each bread_crumbs as item, i}
             <div>
                 <Fa icon={faChevronRight} class="w-10 inline" />
             </div>
             {#if !bread_crumbs[i + 1]}
-                <div>
+                <div class="font-bold">
                     {item}
                 </div>
             {:else}
@@ -34,7 +35,7 @@
                         {item}
                     </div>
                 {:else}
-                    <a href="{urlParent(i)}">
+                    <a class="text-blue-500 px-3 hover:bg-gray-300 rounded-lg transition ease-in-out" href="{urlParent(i)}">
                         {item}
                     </a>
                 {/if}

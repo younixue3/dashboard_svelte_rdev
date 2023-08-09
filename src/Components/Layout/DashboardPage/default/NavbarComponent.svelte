@@ -1,15 +1,14 @@
-<script>
-	// import Icon from '$lib/assets/favicon.png';
-	// import Fa from 'svelte-fa/src/fa.svelte';
-	// import { faHome, faFileAlt, faCogs, faTh, faThLarge } from '@fortawesome/free-solid-svg-icons';
-	import NavbarItemComponent from '../NavbarItemComponent.svelte';
-	import NavbarDropdownComponent from "../NavbarDropdownComponent.svelte";
+<script lang="ts">
+	import Fa from 'svelte-fa/src/fa.svelte';
+	import {faChevronDown, faSignOut} from '@fortawesome/free-solid-svg-icons';
+
+
 </script>
 
-<div class="bg-white p-8 rounded-3xl w-80 m-5 space-y-10">
-	<div class="flex-row space-y-5">
+<div class="bg-white p-4 pt-8 flex flex-col justify-between rounded-2xl w-80 my-3 mx-2 space-y-10">
+	<div class="flex gap-2 p-3 rounded-lg border-2">
 		<svg
-			class="h-12 w-12 rounded-2xl"
+			class="h-12 w-12 rounded-xl m-auto"
 			xmlns="http://www.w3.org/2000/svg"
 			aria-label="Svelte"
 			role="img"
@@ -29,11 +28,24 @@
 				/></g
 			></svg
 		>
-		<h1 class="text-gray-500 text-sm">RDeveloper .Inc</h1>
+		<div class="m-auto h-full flex py-0.5 flex-col justify-between">
+			<div>
+				<div class="text-sm font-medium leading-3">Ricko Tiaka</div>
+				<div class="text-xs font-light leading-4">ricko_tiaka@example.com</div>
+			</div>
+			<a href="/profile" class="text-xs text-blue-500 underline">View profile</a>
+		</div>
 	</div>
-	<div class="space-y-2 w-full text-left">
+	<div class="space-y-2 h-full w-full text-left overflow-y-auto">
 		<slot>
 
 		</slot>
+	</div>
+	<div>
+		<a class="text-gray-600 hover:text-orange-600 font-semibold py-1" href='/dashboard'>
+			<div class="w-full">
+				<Fa icon={faSignOut} class="w-10 inline" />Logout
+			</div>
+		</a>
 	</div>
 </div>
