@@ -10,7 +10,7 @@
 
 </script>
 
-<div class="flex w-full min-h-screen bg-gray-200">
+<div class="flex w-full min-h-screen bg-gray-100">
     <NavbarComponent>
         <NavbarItemComponent icon='faHome' title='Dashboard' to='/dashboard'/>
         <NavbarDropdownComponent icon='faFile' nest="page" title='Page'>

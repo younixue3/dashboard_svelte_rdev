@@ -5,7 +5,7 @@
 
 </script>
 
-<div class="bg-white p-4 pt-8 flex flex-col justify-between rounded-2xl w-80 my-3 mx-2 space-y-10">
+<div class="bg-white p-4 pt-8 flex flex-col justify-between rounded-2xl w-80 my-3 mx-2 space-y-10 shadow-md">
 	<div class="flex gap-2 p-3 rounded-lg border-2">
 		<svg
 			class="h-12 w-12 rounded-xl m-auto"
