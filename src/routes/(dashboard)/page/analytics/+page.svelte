@@ -1,9 +1,21 @@
-<script>
+<script lang="ts">
+    import {setContext} from "svelte";
     import {faCaretUp, faEllipsisVertical} from '@fortawesome/free-solid-svg-icons';
     import Fa from 'svelte-fa/src/fa.svelte';
     import ChartComponent from "../../../../Components/Charts/ChartComponent.svelte";
     import ButtonComponent from "../../../../Components/Button/ButtonComponent.svelte";
+    import PaginationComponent from "../../../../Components/Pagination/PaginationComponent.svelte";
 
+    setContext('counter', { changePage });
+
+    let pageData = 10;
+
+    $: indexPage = 1;
+
+    function changePage(pageNumber) {
+        console.log(pageNumber)
+        indexPage = pageNumber
+    }
     const getData = (max) => {
         let array = [];
         for (let i = 0; i < max; i++) {
@@ -275,17 +287,6 @@
             </tr>
             </tbody>
         </table>
-        <div class="rounded-lg p-2 flex justify-end gap-5 font-bold">
-            <button class="bg-clear rounded hover:bg-gray-200 px-2 w-20">Previous</button>
-            <div class="flex justify-center gap-2">
-                <button class="w-6 h-6 inline-block rounded text-center bg-orange-500 hover:bg-orange-600 text-white text-sm"><span class="align-sub">1</span></button>
-                <button class="w-6 h-6 inline-block rounded text-center bg-orange-500 hover:bg-orange-600 text-white text-sm"><span class="align-sub">2</span></button>
-                <button class="w-6 h-6 inline-block rounded text-center bg-orange-500 hover:bg-orange-600 text-white text-sm"><span class="align-sub">3</span></button>
-                <button class="w-6 h-6 inline-block rounded text-center bg-orange-500 hover:bg-orange-600 text-white text-sm"><span class="align-sub">4</span></button>
-                <button class="w-6 h-6 inline-block rounded text-center bg-orange-500 hover:bg-orange-600 text-white text-sm"><span class="align-sub">5</span></button>
-                <button class="w-6 h-6 inline-block rounded text-center bg-orange-500 hover:bg-orange-600 text-white text-sm"><span class="align-sub">6</span></button>
-            </div>
-            <button class="bg-clear rounded hover:bg-gray-200 px-2 w-20">Next</button>
-        </div>
+        <PaginationComponent totalPage={pageData} indexPage={indexPage} />
     </div>
 </div>
