@@ -8,3 +8,18 @@
         font-family: Outfit;
     }
 }
+
+@layer components {
+    .bg-primary {
+        @apply bg-orange-600 text-white
+    }
+    .bg-clear {
+        @apply bg-white text-black
+    }
+    .bg-danger {
+        @apply bg-red-600 text-white
+    }
+    .bg-warning {
+        @apply bg-yellow-500 text-white
+    }
+}

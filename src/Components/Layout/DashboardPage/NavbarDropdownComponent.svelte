@@ -10,7 +10,7 @@
 	import * as FaIcons from '@fortawesome/free-solid-svg-icons';
 
 	let icons: any = FaIcons;
-	let toggle = false;
+	let toggle;
 
 	function ToogleDropdown() {
 		toggle = toggle == false;
