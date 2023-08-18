@@ -6,15 +6,22 @@
     import ButtonComponent from "../../../../Components/Button/ButtonComponent.svelte";
     import PaginationComponent from "../../../../Components/Pagination/PaginationComponent.svelte";
 
-    setContext('counter', { changePage });
+    setContext('counter', { changePage, pagePrevNext });
 
-    let pageData = 10;
+    let pageData = 20;
 
     $: indexPage = 1;
 
     function changePage(pageNumber) {
-        console.log(pageNumber)
-        indexPage = pageNumber
+        if (pageNumber >= 1 || pageNumber <= pageData) {
+            indexPage = pageNumber
+        }
+    }
+
+    function pagePrevNext(pageNumber) {
+        if (pageNumber >= 1 && pageNumber <= pageData) {
+            indexPage = pageNumber
+        }
     }
     const getData = (max) => {
         let array = [];
@@ -135,7 +142,7 @@
                             type='donut' colors="#3AA6B9"/>
         </div>
     </div>
-    <div class="bg-white col-span-7 shadow-md rounded-lg relative px-5">
+    <div class="bg-white col-span-6 shadow-md rounded-lg relative px-5">
         <table class="w-full table-auto text-sm text-center mt-5 mb-2">
             <thead class="h-10">
             <tr>
@@ -288,5 +295,16 @@
             </tbody>
         </table>
         <PaginationComponent totalPage={pageData} indexPage={indexPage} />
+    </div>
+    <div class="bg-white col-span-2 shadow-md rounded-lg relative">
+        <div class="flex justify-end p-2 px-4">
+            <div class="w-full">
+                To-do List
+            </div>
+            <Fa icon={faEllipsisVertical} class="inline m-auto"/>
+        </div>
+        <div>
+            
+        </div>
     </div>
 </div>

@@ -10,19 +10,21 @@
 
 </script>
 
-<div class="flex w-full min-h-screen bg-gray-100">
-    <NavbarComponent>
-        <NavbarItemComponent icon='faHome' title='Dashboard' to='/dashboard'/>
-        <NavbarDropdownComponent icon='faFile' nest="page" title='Page'>
-            <NavbarItemComponent icon='faChartLine' title='Analytics' to='/page/analytics'/>
-        </NavbarDropdownComponent>
-        <NavbarDropdownComponent icon='faPuzzlePiece' nest="component" title='Component'>
-            <NavbarItemComponent icon='faLayerGroup' title='Type 1' to='/component/component1'/>
-            <NavbarItemComponent icon='faLayerGroup' title='Type 2' to='/component/component2'/>
-        </NavbarDropdownComponent>
-        <NavbarItemComponent icon='faLayerGroup' title='Widget' to='/widget'/>
-    </NavbarComponent>
-    <div class="my-3 w-screen rounded-3xl p-2">
+<div class="flex relative w-full min-h-screen bg-gray-100">
+    <div class="w-80 h-full">
+        <NavbarComponent>
+            <NavbarItemComponent icon='faHome' title='Dashboard' to='/dashboard'/>
+            <NavbarDropdownComponent icon='faFile' nest="page" title='Page'>
+                <NavbarItemComponent icon='faChartLine' title='Analytics' to='/page/analytics'/>
+            </NavbarDropdownComponent>
+            <NavbarDropdownComponent icon='faPuzzlePiece' nest="component" title='Component'>
+                <NavbarItemComponent icon='faLayerGroup' title='Type 1' to='/component/component1'/>
+                <NavbarItemComponent icon='faLayerGroup' title='Type 2' to='/component/component2'/>
+            </NavbarDropdownComponent>
+            <NavbarItemComponent icon='faLayerGroup' title='Widget' to='/widget'/>
+        </NavbarComponent>
+    </div>
+    <div class="my-3 rounded-3xl p-2 w-full">
         <BreadcrumbsComponent/>
         <div class="p-2">
             <slot></slot>
