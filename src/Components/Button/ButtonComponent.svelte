@@ -10,8 +10,10 @@
 
     let icons: any = FaIcons;
 
-    let toggle: boolean;
+    let toggle = false;
     let container;
+
+    let dropdowner: any
 
     function ToogleDropdown() {
         toggle = toggle == false;
@@ -20,10 +22,12 @@
         if (container.contains(e.target) == false)
             toggle = false;
     }
+    // console.log(text ? 'true' : 'false')
+    console.log(dropdowner)
 </script>
 
 <div class="flex relative" bind:this={container}>
-    <button on:click={ToogleDropdown} class={'rounded-md pt-1 pb-0.5 px-2 m-auto ' + color}>
+    <button on:click={ToogleDropdown} class={'rounded-md pt-1 pb-0.5 m-auto ' + color + '' + (text ? 'px-2' : '')}>
         {#if icon}
             <Fa icon={icons[icon]} class="inline"/>
         {/if}
@@ -32,8 +36,8 @@
         {/if}
     </button>
     {#if (dropdown)}
-        <div id="dropdown" class:max-h-[40rem]={toggle} class:max-h-0={!toggle} class:p-2={toggle} class:border={toggle} class="absolute overflow-hidden bg-white left-10 top-5 shadow-md rounded-lg transition-all ease-in-out duration-200">
-            <div class="flex flex-col gap-1">
+        <div id="dropdown" bind:this={dropdowner} class:max-h-[40rem]={toggle} class:max-h-0={!toggle} class:border={toggle} class:max-w-0={!toggle} class="absolute overflow-hidden bg-white right-3 top-5 shadow-md rounded-lg transition-all ease-in-out duration-200 z-50">
+            <div class="flex flex-col gap-1 p-1 text-sm">
                 <slot></slot>
             </div>
         </div>

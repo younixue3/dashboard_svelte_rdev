@@ -10,12 +10,13 @@
 
 </script>
 
-<div class="flex relative w-full min-h-screen bg-gray-100">
+<div class="flex relative w-full min-h-screen">
     <div class="w-80 h-full">
         <NavbarComponent>
             <NavbarItemComponent icon='faHome' title='Dashboard' to='/dashboard'/>
             <NavbarDropdownComponent icon='faFile' nest="page" title='Page'>
                 <NavbarItemComponent icon='faChartLine' title='Analytics' to='/page/analytics'/>
+                <NavbarItemComponent icon='faUser' title='Profile' to='/page/profile'/>
             </NavbarDropdownComponent>
             <NavbarDropdownComponent icon='faPuzzlePiece' nest="component" title='Component'>
                 <NavbarItemComponent icon='faLayerGroup' title='Type 1' to='/component/component1'/>

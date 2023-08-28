@@ -7,6 +7,9 @@
     html {
         font-family: Outfit;
     }
+    body {
+        @apply bg-gray-100
+    }
 }
 
 @layer components {
