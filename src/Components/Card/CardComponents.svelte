@@ -5,15 +5,16 @@
 	export let title: string;
 
 
+
 	let className = '';
 	export { className as class};
 </script>
 
 <div class={"bg-white shadow-md rounded-lg relative overflow-hidden " + className}>
 	{#if title && action_button}
-		<div class="flex justify-end p-2 px-4">
+		<div class="flex justify-end p-2 px-4 border-b-2">
 			{#if title}
-				<div class="w-full">
+				<div class="w-full m-auto">
 					{title}
 				</div>
 			{/if}
@@ -25,4 +26,9 @@
 		</div>
 	{/if}
 	<slot name="content"></slot>
+	{#if $$slots.footer}
+		<div class="border-t">
+			<slot name="footer"></slot>
+		</div>
+	{/if}
 </div>

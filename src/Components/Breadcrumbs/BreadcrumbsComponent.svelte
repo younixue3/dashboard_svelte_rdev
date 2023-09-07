@@ -16,7 +16,7 @@
 </script>
 
 
-<div class="flex space-x-3 rounded-xl p-2">
+<div class="flex space-x-3 rounded-xl p-2 px-5">
     <a class="px-1 hover:bg-gray-300 rounded-lg transition ease-in-out" href="/dashboard">
         <Fa icon={faHome} class="inline" />
     </a>
