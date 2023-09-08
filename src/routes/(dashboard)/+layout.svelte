@@ -10,8 +10,8 @@
 
 </script>
 
-<div class="flex relative w-full min-h-screen">
-    <div class="w-80 h-full">
+<div class="flex flex-col lg:flex-row relative w-full min-h-screen">
+    <div class="h-10 lg:h-0 w-full lg:w-80 relative">
         <NavbarComponent>
             <NavbarItemComponent icon='faHome' title='Dashboard' to='/dashboard'/>
             <NavbarDropdownComponent icon='faFile' nest="page" title='Page'>
