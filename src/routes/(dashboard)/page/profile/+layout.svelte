@@ -67,10 +67,10 @@
             </div>
         </div>
     </CardComponents>
-    <CardComponents class="col-span-3 row-span-4">
+    <CardComponents class="col-span-3 bg-transparent shadow-none row-span-4">
         <div slot="content">
             <div class="border-b">
-                <div class="flex -mb-px">
+                <div class="flex -mb-px bg-white">
                     <a href="/page/profile" class="text-gray-400 hover:text-blue-400 focus:text-blue-600 px-5 py-3 border-b-2 hover:border-blue-400 focus:border-blue-600">Posts</a>
                     <a href="/page/profile/media" class="text-gray-400 hover:text-blue-400 focus:text-blue-600 px-5 py-3 border-b-2 hover:border-blue-400 focus:border-blue-600">Media</a>
                     <button class="text-gray-400 hover:text-blue-400 focus:text-blue-600 px-5 py-3 border-b-2 hover:border-blue-400 focus:border-blue-600">About</button>

@@ -10,7 +10,7 @@
 	export { className as class};
 </script>
 
-<div class={"bg-white shadow-md rounded-lg relative " + className}>
+<div class={"bg-white shadow-md rounded-lg relative overflow-hidden " + className}>
 	{#if title && action_button}
 		<div class="flex justify-end p-2 px-4 border-b-2">
 			{#if title}
