@@ -7,8 +7,8 @@ import CommentComponent from "../../../../Components/Social Media/CommentCompone
 </script>
 
 
-<div class="grid grid-cols-1 gap-3 py-8">
-    <CardComponents class="">
+<div class="grid grid-cols-1 gap-3 py-3">
+    <CardComponents class="bg-white">
         <slot slot="content">
             <div class="p-3">
                 <div class="flex justify-between gap-3">
@@ -43,8 +43,8 @@ import CommentComponent from "../../../../Components/Social Media/CommentCompone
             <div class="grid grid-cols-1 gap-3 pl-5">
                 <CommentComponent>
                     <slot slot="comment_section">
-                        <CommentComponent />
-                        <CommentComponent />
+                        <CommentComponent second_comment={false} />
+                        <CommentComponent second_comment={false} />
                     </slot>
                 </CommentComponent>
             </div>

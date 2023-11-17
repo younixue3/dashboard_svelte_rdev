@@ -17,6 +17,7 @@
             <NavbarDropdownComponent icon='faFile' nest="page" title='Page'>
                 <NavbarItemComponent icon='faChartLine' title='Analytics' to='/page/analytics'/>
                 <NavbarItemComponent icon='faUser' title='Profile' to='/page/profile'/>
+                <NavbarItemComponent icon='faMedal' title='SPK Penerima Beasiswa' to='/page/spk_penerima_beasiswa'/>
             </NavbarDropdownComponent>
             <NavbarDropdownComponent icon='faPuzzlePiece' nest="component" title='Component'>
                 <NavbarItemComponent icon='faLayerGroup' title='Type 1' to='/component/component1'/>
@@ -27,7 +28,7 @@
     </div>
     <div class="my-3 rounded-3xl p-2 w-full">
         <BreadcrumbsComponent/>
-        <div class="p-2">
+        <div class="p-5">
             <slot></slot>
         </div>
     </div>

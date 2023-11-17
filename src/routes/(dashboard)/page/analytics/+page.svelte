@@ -34,7 +34,7 @@
 </script>
 
 <div class="grid grid-cols-8 gap-3">
-    <CardComponents class="col-span-2" action_button="true" title="Visit Duration">
+    <CardComponents class="bg-white col-span-2" action_button="true" title="Visit Duration">
         <slot slot="actions_button">
             <a class="p-1 rounded-md hover:bg-gray-200" href="">Detail</a>
             <a class="p-1 rounded-md text-red-500 hover:bg-gray-200" href="">Delete</a>
@@ -55,7 +55,7 @@
             </div>
         </slot>
     </CardComponents>
-    <CardComponents class="col-span-2" action_button="true" title="Product Purchase">
+    <CardComponents class="bg-white col-span-2" action_button="true" title="Product Purchase">
         <slot slot="actions_button">
             <a class="p-1 rounded-md hover:bg-gray-200" href="">Detail</a>
             <a class="p-1 rounded-md text-red-500 hover:bg-gray-200" href="">Delete</a>
@@ -76,7 +76,7 @@
             </div>
         </slot>
     </CardComponents>
-    <CardComponents class="col-span-2" action_button="true" title="Impressions">
+    <CardComponents class="bg-white col-span-2" action_button="true" title="Impressions">
         <slot slot="actions_button">
             <a class="p-1 rounded-md hover:bg-gray-200" href="">Detail</a>
             <a class="p-1 rounded-md text-red-500 hover:bg-gray-200" href="">Delete</a>
@@ -97,7 +97,7 @@
             </div>
         </slot>
     </CardComponents>
-    <CardComponents class="col-span-2" action_button="true" title="Active Users">
+    <CardComponents class="bg-white col-span-2" action_button="true" title="Active Users">
         <slot slot="actions_button">
             <a class="p-1 rounded-md hover:bg-gray-200" href="">Detail</a>
             <a class="p-1 rounded-md text-red-500 hover:bg-gray-200" href="">Delete</a>
@@ -118,7 +118,7 @@
             </div>
         </slot>
     </CardComponents>
-    <CardComponents class="col-span-5" action_button="true" title="Browsers Usage">
+    <CardComponents class="bg-white col-span-5" action_button="true" title="Browsers Usage">
         <slot slot="actions_button">
             <a class="p-1 rounded-md hover:bg-gray-200" href="">Detail</a>
             <a class="p-1 rounded-md text-red-500 hover:bg-gray-200" href="">Delete</a>
@@ -129,7 +129,7 @@
                     type='bar-stacked' colors="#3AA6B9"/>
         </slot>
     </CardComponents>
-    <CardComponents class="col-span-3" action_button="true">
+    <CardComponents class="bg-white col-span-3" action_button="true">
         <slot name="actions_button">
             <a class="p-1 rounded-md hover:bg-gray-200" href="">Detail</a>
             <a class="p-1 rounded-md text-red-500 hover:bg-gray-200" href="">Delete</a>
@@ -139,7 +139,7 @@
                             type='donut' colors="#3AA6B9"/>
         </slot>
     </CardComponents>
-    <CardComponents class="col-span-6">
+    <CardComponents class="bg-white col-span-6">
         <slot slot="content">
             <table class="w-full table-auto text-sm text-center mt-5 mb-2">
                 <thead class="h-10">
@@ -295,7 +295,7 @@
             <PaginationComponent totalPage={pageData} indexPage={indexPage} />
         </slot>
     </CardComponents>
-    <CardComponents class="col-span-2" action_button="true" title="To-do List">
+    <CardComponents class="bg-white col-span-2" action_button="true" title="To-do List">
         <slot slot="actions_button">
             <a class="p-1 rounded-md hover:bg-gray-200" href="">Detail</a>
             <a class="p-1 rounded-md text-red-500 hover:bg-gray-200" href="">Delete</a>

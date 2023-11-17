@@ -8,7 +8,7 @@
 
 
 <div class="grid grid-cols-4 gap-3">
-    <CardComponents class="col-span-4 row-span-1">
+    <CardComponents class="bg-white col-span-4 row-span-1">
         <div slot="content">
             <div class="flex">
                 <img class="w-full h-96 object-cover" src="https://images.wallpaperscraft.com/image/single/sea_buildings_castle_1003554_3840x2400.jpg" />
@@ -41,7 +41,7 @@
             </div>
         </div>
     </CardComponents>
-    <CardComponents class="col-span-1">
+    <CardComponents class="bg-white col-span-1">
         <div slot="content">
             <div class="flex flex-col divide divide-y text-sm">
                 <div class="p-1 px-3">
@@ -67,7 +67,7 @@
             </div>
         </div>
     </CardComponents>
-    <CardComponents class="col-span-3 bg-transparent shadow-none row-span-4">
+    <CardComponents class="bg-transparent col-span-3 bg-transparent shadow-none row-span-4">
         <div slot="content">
             <div class="border-b">
                 <div class="flex -mb-px bg-white">
@@ -81,7 +81,7 @@
 <!--End Content Profile Home Page-->
         </div>
     </CardComponents>
-    <CardComponents class="" action_button="true" title="Follower">
+    <CardComponents class="bg-white " action_button="true" title="Follower">
         <div slot="actions_button">
             <a class="p-1 rounded-md hover:bg-gray-200" href="">Detail</a>
             <a class="p-1 rounded-md text-red-500 hover:bg-gray-200" href="">Delete</a>
@@ -102,7 +102,7 @@
             </div>
         </div>
     </CardComponents>
-    <CardComponents class="" action_button="true" title="Following">
+    <CardComponents class="bg-white " action_button="true" title="Following">
         <div slot="actions_button">
             <a class="p-1 rounded-md hover:bg-gray-200" href="">Detail</a>
             <a class="p-1 rounded-md text-red-500 hover:bg-gray-200" href="">Delete</a>

@@ -3,6 +3,8 @@
     import {faChevronDown, faSignOut} from '@fortawesome/free-solid-svg-icons';
     import ButtonComponent from "../Button/ButtonComponent.svelte";
 
+    export let second_comment = true;
+
 
 </script>
 
@@ -24,6 +26,12 @@
                 Proin et erat ac ligula fringilla ultrices. Aliquam ullamcorper sodales metus, in tempor urna vulputate
                 eu.
                 Integer sed lacinia purus. Sed nisi nisi, mollis sed ultrices ac, condimentum sed ex.</p>
+            <div class="flex py-2">
+                <ButtonComponent icon="faThumbsUp" class="hover:bg-blue-600 hover:text-white focus:text-blue-600 focus:bg-blue-200" text="Like"/>
+                {#if second_comment}
+                    <ButtonComponent icon="faReply" class="hover:bg-emerald-600 hover:text-white focus:text-emerald-600 focus:bg-emerald-200" text="Reply"/>
+                {/if}
+            </div>
 <!--            <div class="p-4">-->
 <!--                <img class="w-full h-52 object-cover rounded-lg"-->
 <!--                     src="https://images.wallpaperscraft.com/image/single/sea_buildings_castle_1003554_3840x2400.jpg">-->
