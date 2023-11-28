@@ -5,21 +5,21 @@
 
     let toggle = false;
 
-    function ToogleDropdown() {
+    function ToggleDropdown() {
         toggle = toggle == false;
     }
 
 </script>
 
 <div class="fixed z-40 flex lg:h-full w-full lg:w-auto">
-    <div on:click={ToogleDropdown} class="lg:hidden bg-white flex p-2 w-full h-10">
+    <div on:click={ToggleDropdown} class="lg:hidden bg-white flex p-2 w-full h-10">
         <ButtonComponent icon="faBars"/>
     </div>
     <div class="bg-black/50 lg:bg-black/0 z-50 backdrop-blur-sm lg:backdrop-blur-none absolute lg:static overflow-hidden h-screen lg:h-auto w-screen lg:w-auto transition-all ease-in-out "
          class:hidden={toggle}>
         <div class="p-3 h-full">
             <div class="bg-white h-full md:w-80 lg:w-full flex p-4 lg:pt-8 flex-col rounded-2xl shadow-md transition-all ease-in-out">
-                <div on:click={ToogleDropdown} class="h-10 lg:hidden ml-auto">
+                <div on:click={ToggleDropdown} class="h-10 lg:hidden ml-auto">
                     <ButtonComponent icon="faXmark"></ButtonComponent>
                 </div>
                 <div class="flex gap-2 p-3 rounded-lg border-2">

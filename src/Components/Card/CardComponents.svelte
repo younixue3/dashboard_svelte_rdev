@@ -10,7 +10,7 @@
 	export { className as class};
 </script>
 
-<div class={"shadow-md rounded-lg relative overflow-hidden " + className}>
+<div class={"shadow-md rounded-lg " + className}>
 	{#if title && action_button}
 		<div class="flex justify-end p-2 px-4 border-b-2">
 			{#if title}
@@ -25,7 +25,7 @@
 			{/if}
 		</div>
 	{/if}
-	<slot class="overflow-hidden" name="content"></slot>
+	<slot name="content"></slot>
 	{#if $$slots.footer}
 		<div class="border-t">
 			<slot name="footer"></slot>

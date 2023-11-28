@@ -3,7 +3,7 @@
     import '@fortawesome/free-solid-svg-icons';
     import * as FaIcons from '@fortawesome/free-solid-svg-icons';
 
-    export let dropdown: boolean;
+    export let dropdown = false;
     export let color: any;
     export let text: string;
     export let icon: string;
@@ -25,8 +25,6 @@
         if (container.contains(e.target) == false)
             toggle = false;
     }
-    // console.log(text ? 'true' : 'false')
-    console.log(dropdowner)
 </script>
 
 <div class="flex relative" bind:this={container}>
@@ -39,7 +37,7 @@
         {/if}
     </button>
     {#if (dropdown)}
-        <div id="dropdown" bind:this={dropdowner} class:max-h-[40rem]={toggle} class:max-h-0={!toggle} class:border={toggle} class:max-w-0={!toggle} class="absolute overflow-hidden bg-white right-3 top-5 shadow-md rounded-lg transition-all ease-in-out duration-400 z-50">
+        <div id="dropdown" bind:this={dropdowner} class:max-h-[40rem]={toggle} class:max-h-0={!toggle} class:border={toggle} class:max-w-0={!toggle} class="absolute overflow-hidden bg-white -right-10 top-5 shadow-md rounded-lg transition-all ease-in-out duration-400 z-50">
             <div class="flex flex-col gap-1 p-1 text-sm">
                 <slot></slot>
             </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {setContext} from "svelte";
+    import { setContext } from "svelte";
     import {faCaretUp, faEllipsisVertical} from '@fortawesome/free-solid-svg-icons';
     import Fa from 'svelte-fa/src/fa.svelte';
     import ChartComponent from "../../../../Components/Charts/ChartComponent.svelte";
@@ -7,6 +7,9 @@
     import PaginationComponent from "../../../../Components/Pagination/PaginationComponent.svelte";
     import CardComponents from "../../../../Components/Card/CardComponents.svelte";
     import {writable} from "svelte/store";
+    import axios from "axios";
+    import PocketBase from 'pocketbase';
+    import ModalComponent from "../../../../Components/Modal/ModalComponent.svelte";
 
     setContext('counter', { changePage, pagePrevNext });
 
@@ -14,7 +17,7 @@
 
     $: indexPage = 1;
 
-    function changePage(pageNumber) {
+    function changePage(pageNumber:any) {
         if (pageNumber >= 1 || pageNumber <= pageData) {
             indexPage = pageNumber
         }
@@ -157,6 +160,21 @@
         return k1 + k2 + k3 + k4
     }
 
+    $: formData = {}
+
+    function onChanges(e:any) {
+        console.log(e.target.value)
+        formData[e.target.name] = e.target.value
+        console.log(formData)
+    }
+
+    const pb = new PocketBase('http://127.0.0.1:8090');
+
+    function postData() {
+        pb.collection('mahasiswa').create(formData);
+        
+    }
+
     function kalkulasi(data) {
         var new_data = data
         new_data.k1 = kalkulasi_ipk(parseInt(new_data.ipk))
@@ -170,7 +188,6 @@
     mahasiswa.forEach((value, index) => {
         analisa.push(kalkulasi(value))
     })
-    console.log(analisa)
 
     // console.log(analisa)
     // for (let i=0;i<mahasiswa.length; i++) {
@@ -179,6 +196,15 @@
 </script>
 
 <div class="grid grid-cols-8 gap-3">
+    <CardComponents class="bg-white col-span-8">
+        <slot slot="content">
+            <ModalComponent>
+                <slot slot="content">
+                    adas
+                </slot>
+            </ModalComponent>
+        </slot>
+    </CardComponents>
     <CardComponents class="bg-white col-span-8">
         <slot slot="content">
             <table class="w-full table-auto text-sm text-center mt-5 mb-2">
