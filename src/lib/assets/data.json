@@ -1,0 +1,322 @@
+[
+    {
+      "kode": "A1",
+      "nama": "DINDA AYU FRAMAISELLA",
+      "ipk": "4",
+      "masa_studi": "2",
+      "prestasi": "Regional",
+      "ta": "A"
+    },
+    {
+      "kode": "A2",
+      "nama": "IRVAN EFENDI",
+      "ipk": "4",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A3",
+      "nama": "NURWINDAWATI",
+      "ipk": "4",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A4",
+      "nama": "RAUDHATUL ADAWIYAH",
+      "ipk": "3.97",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A5",
+      "nama": "ERY MURNISIAH",
+      "ipk": "3.97",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A6",
+      "nama": "EVIE JUMIATI S",
+      "ipk": "3.97",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A7",
+      "nama": "FRAGA BATARA KRAYANA TAMA",
+      "ipk": "3.97",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A8",
+      "nama": "HARDIYANTI WARDANAH",
+      "ipk": "3.97",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A9",
+      "nama": "JITA INDAH SARI",
+      "ipk": "3.97",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A10",
+      "nama": "LIDYA VERA SIANTURI",
+      "ipk": "3.97",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A11",
+      "nama": "ABDUL MUIS",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A12",
+      "nama": "ACHMAT RIYADI",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A13",
+      "nama": "ANIKA PRAMESTI REGITA",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A14",
+      "nama": "EKSA HENTIN SEKARNINGRUM",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A15",
+      "nama": "ETA FATRIANY",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A16",
+      "nama": "FATIMAH",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A17",
+      "nama": "FEBRI TRI RAHAYU",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A18",
+      "nama": "GRADIAN PUTRA ANANTA",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A19",
+      "nama": "KARMILA MAINIKE PUTRI",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A20",
+      "nama": "MAY FAJRIANI",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A21",
+      "nama": "MIRAWATI",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A22",
+      "nama": "MUHAMMAD REZZA",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A23",
+      "nama": "NAHDIYATY NUR RAHMI",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A24",
+      "nama": "NUR ASIYAH",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A25",
+      "nama": "REKA LADINA SAQILA",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "Regional",
+      "ta": "A"
+    },
+    {
+      "kode": "A26",
+      "nama": "RESTA REVALDA NINGSIH",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A27",
+      "nama": "RISCANANDA NOVIA ARMAH",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A28",
+      "nama": "SHELA ERNITA",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A29",
+      "nama": "SRI WAHYUNI",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A30",
+      "nama": "SURYA RAKHMAT HIDAYAT",
+      "ipk": "3.96",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A31",
+      "nama": "MUHAMMAD WAHYU RAMADANI",
+      "ipk": "3.94",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A32",
+      "nama": "NADIA NUR HAIDAH",
+      "ipk": "3.94",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "AB"
+    },
+    {
+      "kode": "A33",
+      "nama": "DEDE DAMARA PUTRA",
+      "ipk": "3.93",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A34",
+      "nama": "MENTARI APRIANI",
+      "ipk": "3.93",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A35",
+      "nama": "UMIL MAKARIM",
+      "ipk": "3.93",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A36",
+      "nama": "ADITYA SEPTIADINATA",
+      "ipk": "3.92",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A37",
+      "nama": "FITRI WULANDARI",
+      "ipk": "3.92",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A38",
+      "nama": "JULITA PRATIWI",
+      "ipk": "3.92",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A39",
+      "nama": "NILUH KRISMAYANTI PRASTIKA",
+      "ipk": "3.92",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    },
+    {
+      "kode": "A40",
+      "nama": "NOLVA INDAH PERMATA",
+      "ipk": "3.92",
+      "masa_studi": "2",
+      "prestasi": "",
+      "ta": "A"
+    }
+  ]
