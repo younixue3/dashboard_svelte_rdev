@@ -10,6 +10,7 @@
     import axios from "axios";
     import PocketBase from 'pocketbase';
     import ModalComponent from "../../../../Components/Modal/ModalComponent.svelte";
+    import InputComponent from "../../../../Components/Form/InputComponent.svelte";
 
     setContext('counter', { changePage, pagePrevNext });
 
@@ -160,8 +161,6 @@
         return k1 + k2 + k3 + k4
     }
 
-    $: formData = {}
-
     function onChanges(e:any) {
         console.log(e.target.value)
         formData[e.target.name] = e.target.value
@@ -170,8 +169,8 @@
 
     const pb = new PocketBase('http://127.0.0.1:8090');
 
-    function postData() {
-        pb.collection('mahasiswa').create(formData);
+    function postData(formdata:object) {
+        pb.collection('mahasiswa').create(formdata);
         
     }
 
@@ -189,6 +188,16 @@
         analisa.push(kalkulasi(value))
     })
 
+    function onSubmit(e:any) {
+        const formData = new FormData(e.target);
+
+        const data:any = {};
+        for (let field of formData) {
+            const [key, value] = field;
+            data[key] = value;
+        }
+        postData(data)
+    }
     // console.log(analisa)
     // for (let i=0;i<mahasiswa.length; i++) {
     //     analisa.push(mahasiswa[])
@@ -198,9 +207,21 @@
 <div class="grid grid-cols-8 gap-3">
     <CardComponents class="bg-white col-span-8">
         <slot slot="content">
-            <ModalComponent>
+            <ModalComponent icon="faPlus" text="Add Mahasiswa" color="bg-primary">
                 <slot slot="content">
-                    adas
+                            <form id="form_mahasiswa" on:submit={onSubmit} class="grid grid-cols-6 gap-5 p-10">
+                        <div class="col-span-6">
+                            <InputComponent label="Nama" name="nama" required={true} />
+                        </div>
+                        <div class="col-span-6">
+                            <InputComponent label="Kode" name="kode" required={true} />
+                        </div>
+                    </form>
+                </slot>
+                <slot slot="footer">
+                    <div class="grid grid-cols-2">
+                        <ButtonComponent form="form_mahasiswa" text="Submit" type="submit" color="bg-primary" />
+                    </div>
                 </slot>
             </ModalComponent>
         </slot>

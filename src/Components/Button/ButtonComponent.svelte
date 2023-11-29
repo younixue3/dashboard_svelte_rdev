@@ -7,6 +7,8 @@
     export let color: any;
     export let text: string;
     export let icon: string;
+    export let form: string;
+    export let type = 'button';
 
     let icons: any = FaIcons;
 
@@ -28,7 +30,7 @@
 </script>
 
 <div class="flex relative" bind:this={container}>
-    <button on:click={ToogleDropdown} class={'rounded-md pt-1 pb-0.5 m-auto ' + color + ' ' + (text ? 'px-2' : ' ') + ' ' + className}>
+    <button form={form} type={type} on:click={ToogleDropdown} class={'rounded-md pt-1 pb-0.5 m-auto ' + color + ' ' + (text ? 'px-2' : ' ') + ' ' + className}>
         {#if icon}
             <Fa icon={icons[icon]} class="inline "/>
         {/if}
