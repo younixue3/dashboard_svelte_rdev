@@ -19,7 +19,7 @@ function ToggleModal() {
 
 </script>
 
-<div class="">
+<div>
     <div on:click={ToggleModal}>
         <ButtonComponent text="Add" icon={icon} color={color}></ButtonComponent>
     </div>

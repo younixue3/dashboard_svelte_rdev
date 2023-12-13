@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { setContext } from "svelte";
+    import {setContext} from "svelte";
+    import { error } from '@sveltejs/kit';
     import {faCaretUp, faEllipsisVertical} from '@fortawesome/free-solid-svg-icons';
     import Fa from 'svelte-fa/src/fa.svelte';
     import ChartComponent from "../../../../Components/Charts/ChartComponent.svelte";
@@ -12,13 +13,17 @@
     import ModalComponent from "../../../../Components/Modal/ModalComponent.svelte";
     import InputComponent from "../../../../Components/Form/InputComponent.svelte";
 
-    setContext('counter', { changePage, pagePrevNext });
+    setContext('counter', {changePage, pagePrevNext});
 
     let pageData = 20;
+    const pb = new PocketBase('http://127.0.0.1:8090');
+    let promise = Promise.resolve([])
+
+    export let data;
 
     $: indexPage = 1;
 
-    function changePage(pageNumber:any) {
+    function changePage(pageNumber: any) {
         if (pageNumber >= 1 || pageNumber <= pageData) {
             indexPage = pageNumber
         }
@@ -60,50 +65,52 @@
         t3: 0.106156323547628
     }
 
-    const mahasiswa= [
-        {kode: 'A1', nama: 'DINDA AYU FRAMAISELLA', ipk: '4', masa_studi: '2',prestasi: 'Regional', ta: 'A'},
-        {kode: 'A2', nama: 'IRVAN EFENDI', ipk: '4', masa_studi: '2',prestasi: '', ta: 'A'},
-        {kode: 'A3', nama: 'NURWINDAWATI', ipk: '4', masa_studi: '2',prestasi: '', ta: 'A'},
-        {kode : 'A4', nama: 'RAUDHATUL ADAWIYAH', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A5', nama: 'ERY MURNISIAH', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A6', nama: 'EVIE JUMIATI S', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A7', nama: 'FRAGA BATARA KRAYANA TAMA', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A8', nama: 'HARDIYANTI WARDANAH', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A9', nama: 'JITA INDAH SARI', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A10', nama: 'LIDYA VERA SIANTURI', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A11', nama: 'ABDUL MUIS', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A12', nama: 'ACHMAT RIYADI', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A13', nama: 'ANIKA PRAMESTI REGITA', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A14', nama: 'EKSA HENTIN SEKARNINGRUM', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A15', nama: 'ETA FATRIANY', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A16', nama: 'FATIMAH', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A17', nama: 'FEBRI TRI RAHAYU', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A18', nama: 'GRADIAN PUTRA ANANTA', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A19', nama: 'KARMILA MAINIKE PUTRI', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A20', nama: 'MAY FAJRIANI', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A21', nama: 'MIRAWATI', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A22', nama: 'MUHAMMAD REZZA', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A23', nama: 'NAHDIYATY NUR RAHMI', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A24', nama: 'NUR ASIYAH', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A25', nama: 'REKA LADINA SAQILA', ipk: '3.96', masa_studi: '2', prestasi: 'Regional', ta: 'A'},
-        {kode : 'A26', nama: 'RESTA REVALDA NINGSIH', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A27', nama: 'RISCANANDA NOVIA ARMAH', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A28', nama: 'SHELA ERNITA', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A29', nama: 'SRI WAHYUNI', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A30', nama: 'SURYA RAKHMAT HIDAYAT', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A31', nama: 'MUHAMMAD WAHYU RAMADANI', ipk: '3.94', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A32', nama: 'NADIA NUR HAIDAH', ipk: '3.94', masa_studi: '2', prestasi: '', ta: 'AB'},
-        {kode : 'A33', nama: 'DEDE DAMARA PUTRA', ipk: '3.93', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A34', nama: 'MENTARI APRIANI', ipk: '3.93', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A35', nama: 'UMIL MAKARIM', ipk: '3.93', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A36', nama: 'ADITYA SEPTIADINATA', ipk: '3.92', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A37', nama: 'FITRI WULANDARI', ipk: '3.92', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A38', nama: 'JULITA PRATIWI', ipk: '3.92', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A39', nama: 'NILUH KRISMAYANTI PRASTIKA', ipk: '3.92', masa_studi: '2', prestasi: '', ta: 'A'},
-        {kode : 'A40', nama: 'NOLVA INDAH PERMATA', ipk: '3.92', masa_studi: '2', prestasi: '',ta:'A'},
-    ]
+    // const mahasiswa= [
+    //     {kode: 'A1', nama: 'DINDA AYU FRAMAISELLA', ipk: '4', masa_studi: '2',prestasi: 'Regional', ta: 'A'},
+    //     {kode: 'A2', nama: 'IRVAN EFENDI', ipk: '4', masa_studi: '2',prestasi: '', ta: 'A'},
+    //     {kode: 'A3', nama: 'NURWINDAWATI', ipk: '4', masa_studi: '2',prestasi: '', ta: 'A'},
+    //     {kode : 'A4', nama: 'RAUDHATUL ADAWIYAH', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A5', nama: 'ERY MURNISIAH', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A6', nama: 'EVIE JUMIATI S', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A7', nama: 'FRAGA BATARA KRAYANA TAMA', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A8', nama: 'HARDIYANTI WARDANAH', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A9', nama: 'JITA INDAH SARI', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A10', nama: 'LIDYA VERA SIANTURI', ipk: '3.97', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A11', nama: 'ABDUL MUIS', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A12', nama: 'ACHMAT RIYADI', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A13', nama: 'ANIKA PRAMESTI REGITA', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A14', nama: 'EKSA HENTIN SEKARNINGRUM', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A15', nama: 'ETA FATRIANY', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A16', nama: 'FATIMAH', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A17', nama: 'FEBRI TRI RAHAYU', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A18', nama: 'GRADIAN PUTRA ANANTA', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A19', nama: 'KARMILA MAINIKE PUTRI', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A20', nama: 'MAY FAJRIANI', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A21', nama: 'MIRAWATI', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A22', nama: 'MUHAMMAD REZZA', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A23', nama: 'NAHDIYATY NUR RAHMI', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A24', nama: 'NUR ASIYAH', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A25', nama: 'REKA LADINA SAQILA', ipk: '3.96', masa_studi: '2', prestasi: 'Regional', ta: 'A'},
+    //     {kode : 'A26', nama: 'RESTA REVALDA NINGSIH', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A27', nama: 'RISCANANDA NOVIA ARMAH', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A28', nama: 'SHELA ERNITA', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A29', nama: 'SRI WAHYUNI', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A30', nama: 'SURYA RAKHMAT HIDAYAT', ipk: '3.96', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A31', nama: 'MUHAMMAD WAHYU RAMADANI', ipk: '3.94', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A32', nama: 'NADIA NUR HAIDAH', ipk: '3.94', masa_studi: '2', prestasi: '', ta: 'AB'},
+    //     {kode : 'A33', nama: 'DEDE DAMARA PUTRA', ipk: '3.93', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A34', nama: 'MENTARI APRIANI', ipk: '3.93', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A35', nama: 'UMIL MAKARIM', ipk: '3.93', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A36', nama: 'ADITYA SEPTIADINATA', ipk: '3.92', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A37', nama: 'FITRI WULANDARI', ipk: '3.92', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A38', nama: 'JULITA PRATIWI', ipk: '3.92', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A39', nama: 'NILUH KRISMAYANTI PRASTIKA', ipk: '3.92', masa_studi: '2', prestasi: '', ta: 'A'},
+    //     {kode : 'A40', nama: 'NOLVA INDAH PERMATA', ipk: '3.92', masa_studi: '2', prestasi: '',ta:'A'},
+    // ]
 
-    const analisa = []
+    // const analisa = []
+
+    let mahasiswa: any = [];
 
     function kalkulasi_ipk(nilai_ipk) {
         if (nilai_ipk === 4) {
@@ -157,75 +164,53 @@
         }
     }
 
-    function kalkulasi_sum(k1,k2,k3,k4) {
+    function kalkulasi_sum(k1, k2, k3, k4) {
         return k1 + k2 + k3 + k4
     }
 
-    function onChanges(e:any) {
+    function onChanges(e: any) {
         console.log(e.target.value)
         formData[e.target.name] = e.target.value
         console.log(formData)
     }
 
-    const pb = new PocketBase('http://127.0.0.1:8090');
-
-    function postData(formdata:object) {
-        pb.collection('mahasiswa').create(formdata);
-        
-    }
-
-    function kalkulasi(data) {
-        var new_data = data
-        new_data.k1 = kalkulasi_ipk(parseInt(new_data.ipk))
-        new_data.k2 = kalkulasi_masa_studi(parseInt(new_data.masa_studi))
-        new_data.k3 = kalkulasi_prestasi(new_data.prestasi)
-        new_data.k4 = kalkulasi_ta(new_data.ta)
-        new_data.total = kalkulasi_sum(new_data.k1, new_data.k2, new_data.k3, new_data.k4)
-        return new_data
-    }
-
-    mahasiswa.forEach((value, index) => {
-        analisa.push(kalkulasi(value))
-    })
-
-    function onSubmit(e:any) {
-        const formData = new FormData(e.target);
-
-        const data:any = {};
-        for (let field of formData) {
-            const [key, value] = field;
-            data[key] = value;
-        }
-        postData(data)
-    }
-    // console.log(analisa)
-    // for (let i=0;i<mahasiswa.length; i++) {
-    //     analisa.push(mahasiswa[])
+    // function kalkulasi(data) {
+    //     var new_data = data
+    //     new_data.k1 = kalkulasi_ipk(parseInt(new_data.ipk))
+    //     new_data.k2 = kalkulasi_masa_studi(parseInt(new_data.masa_studi))
+    //     new_data.k3 = kalkulasi_prestasi(new_data.prestasi)
+    //     new_data.k4 = kalkulasi_ta(new_data.ta)
+    //     new_data.total = kalkulasi_sum(new_data.k1, new_data.k2, new_data.k3, new_data.k4)
+    //     return new_data
     // }
+
+    // mahasiswa.forEach((value, index) => {
+    //     analisa.push(kalkulasi(value))
+    // })
+
+    mahasiswa = data.record
 </script>
 
 <div class="grid grid-cols-8 gap-3">
-    <CardComponents class="bg-white col-span-8">
+    <ModalComponent icon="faPlus" text="Add Mahasiswa" color="bg-primary">
         <slot slot="content">
-            <ModalComponent icon="faPlus" text="Add Mahasiswa" color="bg-primary">
-                <slot slot="content">
-                            <form id="form_mahasiswa" on:submit={onSubmit} class="grid grid-cols-6 gap-5 p-10">
-                        <div class="col-span-6">
-                            <InputComponent label="Nama" name="nama" required={true} />
-                        </div>
-                        <div class="col-span-6">
-                            <InputComponent label="Kode" name="kode" required={true} />
-                        </div>
-                    </form>
-                </slot>
-                <slot slot="footer">
-                    <div class="grid grid-cols-2">
-                        <ButtonComponent form="form_mahasiswa" text="Submit" type="submit" color="bg-primary" />
-                    </div>
-                </slot>
-            </ModalComponent>
+            <form id="form_mahasiswa" method="POST" action="?/create" class="grid grid-cols-6 gap-5 p-10">
+                <div class="col-span-6">
+<!--                    <input name="nama"/>-->
+                    <InputComponent label="Nama" name="nama" required={true}/>
+                </div>
+                <div class="col-span-6">
+<!--                    <input name="kode" />-->
+                    <InputComponent label="Kode" name="kode" required={true}/>
+                </div>
+            </form>
         </slot>
-    </CardComponents>
+        <slot slot="footer">
+            <div class="grid grid-cols-2">
+                <ButtonComponent form="form_mahasiswa" text="Submit" type="submit" color="bg-primary"/>
+            </div>
+        </slot>
+    </ModalComponent>
     <CardComponents class="bg-white col-span-8">
         <slot slot="content">
             <table class="w-full table-auto text-sm text-center mt-5 mb-2">
@@ -244,21 +229,22 @@
                 </tr>
                 </thead>
                 <tbody>
-                {#each analisa as item, key}
-                    <tr>
-                        <td>{item.kode}</td>
-                        <td>{item.nama}</td>
-                        <td>{Math.round(item.k1 * 100) / 100}</td>
-                        <td>{Math.round(item.k2 * 100) / 100}</td>
-                        <td>{Math.round(item.k3 * 100) / 100}</td>
-                        <td>{Math.round(item.k4 * 100) / 100}</td>
-                        <td>{Math.round(item.total * 1000) / 1000}</td>
-                        <td><ButtonComponent text="{++key}" color={key < 4 ? 'bg-primary' : key <= 4 || key <= 10 ? 'bg-warning' : 'bg-danger' } /></td>
-                    </tr>
-                {/each}
+                    {#each mahasiswa as item}
+                        <tr>
+                            <td>{item.kode}</td>
+                            <td>{item.nama}</td>
+                            <!--                            <td>{item.nama}</td>-->
+                            <!--                        <td>{Math.round(item.k1 * 100) / 100}</td>-->
+                            <!--                        <td>{Math.round(item.k2 * 100) / 100}</td>-->
+                            <!--                        <td>{Math.round(item.k3 * 100) / 100}</td>-->
+                            <!--                        <td>{Math.round(item.k4 * 100) / 100}</td>-->
+                            <!--                        <td>{Math.round(item.total * 1000) / 1000}</td>-->
+                            <!--                        <td><ButtonComponent text="{++key}" color={key < 4 ? 'bg-primary' : key <= 4 || key <= 10 ? 'bg-warning' : 'bg-danger' } /></td>-->
+                        </tr>
+                    {/each}
                 </tbody>
             </table>
-            <PaginationComponent totalPage={pageData} indexPage={indexPage} />
+            <PaginationComponent totalPage={pageData} indexPage={indexPage}/>
         </slot>
     </CardComponents>
 </div>
