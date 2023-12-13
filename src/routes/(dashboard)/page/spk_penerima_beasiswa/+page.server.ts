@@ -12,7 +12,7 @@ export async function load() {
     try {
         const record = await pb.collection('mahasiswa').getFullList()
         return {record}
-    } catch (e) {
+    } catch (e:any) {
         throw error(e)
     }
 }

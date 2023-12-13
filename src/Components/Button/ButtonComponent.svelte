@@ -39,7 +39,7 @@
         {/if}
     </button>
     {#if (dropdown)}
-        <div id="dropdown" bind:this={dropdowner} class:max-h-[40rem]={toggle} class:max-h-0={!toggle} class:border={toggle} class:max-w-0={!toggle} class="absolute overflow-hidden bg-white -right-10 top-5 shadow-md rounded-lg transition-all ease-in-out duration-400 z-50">
+        <div id="dropdown" bind:this={dropdowner} class:max-h-[40rem]={toggle} class:max-h-0={!toggle} class:border={toggle} class:max-w-0={!toggle} class="absolute overflow-hidden bg-white right-0 top-3 shadow-md rounded-lg transition-all ease-in-out duration-400 z-50">
             <div class="flex flex-col gap-1 p-1 text-sm">
                 <slot></slot>
             </div>

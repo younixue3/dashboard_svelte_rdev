@@ -21,9 +21,9 @@ function ToggleModal() {
 
 <div>
     <div on:click={ToggleModal}>
-        <ButtonComponent text="Add" icon={icon} color={color}></ButtonComponent>
+        <ButtonComponent text={text} icon={icon} color={color}></ButtonComponent>
     </div>
-    <div class:hidden={toggle} class="absolute flex right-0 top-0 w-screen h-screen bg-black/50 z-50 backdrop-blur-sm overflow-hidden">
+    <div class:hidden={toggle} class="fixed flex right-0 top-0 w-screen h-screen bg-black/50 z-50 backdrop-blur-sm overflow-hidden">
         {#if $$slots.footer}
             <CardComponents class="m-auto bg-white col-span-8" title={text}>
                 <slot slot="custom_button">

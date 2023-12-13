@@ -18,6 +18,7 @@
                 <NavbarItemComponent icon='faChartLine' title='Analytics' to='/page/analytics'/>
                 <NavbarItemComponent icon='faUser' title='Profile' to='/page/profile'/>
                 <NavbarItemComponent icon='faMedal' title='SPK Penerima Beasiswa' to='/page/spk_penerima_beasiswa'/>
+                <NavbarItemComponent icon='faMedal' title='SPK Kategori' to='/page/spk_kategori'/>
             </NavbarDropdownComponent>
             <NavbarDropdownComponent icon='faPuzzlePiece' nest="component" title='Component'>
                 <NavbarItemComponent icon='faLayerGroup' title='Type 1' to='/component/component1'/>
